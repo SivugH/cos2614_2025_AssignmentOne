@@ -117,12 +117,13 @@ int main(int argc, char *argv[])
     std::cout << "3 - Borrow" << std::endl;
     std::cout << "4 - Add" << std::endl << std::endl;
 
-    std::cin << loFunctionSelection;
+    std::cin >> loFunctionSelection;
 
     switch (loFunctionSelection)
     {
         case 1: //Search
         {
+
         }
         case 2://Return
         {

@@ -18,9 +18,11 @@ TEMPLATE = app
 SOURCES += main.cpp \
     book.cpp \
     magazine.cpp \
-    libraryitem.cpp
+    libraryitem.cpp \
+    libraryadmin.cpp
 
 HEADERS += \
     book.h \
     libraryitem.h \
-    magazine.h
+    magazine.h \
+    libraryadmin.h
