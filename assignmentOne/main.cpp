@@ -5,6 +5,7 @@
 #include "magazine.h"
 #include "book.h"
 #include "libraryitem.h"
+#include "libraryadmin.h"
 
 
 
@@ -12,6 +13,7 @@ int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
 
+    clLibraryAdmin loAdmin;
 
 
 
@@ -123,7 +125,7 @@ int main(int argc, char *argv[])
     {
         case 1: //Search
         {
-
+            loAdmin.findItem("Still going");
         }
         case 2://Return
         {
