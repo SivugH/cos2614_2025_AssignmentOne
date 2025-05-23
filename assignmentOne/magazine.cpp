@@ -8,12 +8,12 @@ clMagazine::clMagazine()
     std::cout << "Magazine instance created" << std::endl;
 }
 
-void clMagazine::getMagazine()
+void clMagazine::getMagazineIssueNumber()
 {
 
 }
 
-void clMagazine::setMagazine()
+void clMagazine::setMagazineIssueNumber()
 {
 
 }

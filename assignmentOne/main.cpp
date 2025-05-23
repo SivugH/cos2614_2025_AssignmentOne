@@ -5,7 +5,6 @@
 #include "magazine.h"
 #include "book.h"
 #include "libraryitem.h"
-#include "libraryadmin.h"
 
 
 
@@ -13,7 +12,7 @@ int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
 
-    clLibraryAdmin loAdmin;
+    QString loBookTitle_qstring;
 
 
 
@@ -51,7 +50,6 @@ int main(int argc, char *argv[])
         clBook loBook;
 
         std::string loBookTitle;
-        QString loBookTitle_qstring;
         std::cout << "Enter Book Title:" << std::endl;
         std::cin >>loBookTitle;
         loBookTitle_qstring = QString::fromStdString(loBookTitle);
@@ -112,6 +110,8 @@ int main(int argc, char *argv[])
 
     }
 
+
+
     int loFunctionSelection;
     std::cout << "Select the following for Book/Magazine:" << std::endl << std::endl;
     std::cout << "1 - Search" << std::endl;
@@ -125,21 +125,26 @@ int main(int argc, char *argv[])
     {
         case 1: //Search
         {
-            loAdmin.findItem("Still going");
+ //           loAdmin.findItem(loBookTitle_qstring);
         }
         case 2://Return
         {
+//            loAdmin.updateItem();
         }
         case 3: //Borrow
         {
+            //check for availability before borrowing
+ //           loAdmin.updateItem();
         }
         case 4: //Add
         {
+            //Check item does not exist before duplicating
+            //Add item
         }
     default: //neither of above
     {
     }
-
+        std::cout << "Your have entered an incorrect input" << std::endl;
     }
 
 
