@@ -11,7 +11,7 @@ class clBook : public clLibraryItem
 public:
     clBook();
 
-    void getGenre();
+    QString getGenre();
     void setGenre(QString paGenre);
 
     void displayInfo();

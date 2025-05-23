@@ -18,24 +18,27 @@ private:
 public:
     clLibraryItem();
 
-    void getTitle();
+    QString getTitle();
     void setTitle(QString paTitle);
 
-    void getAuthor();
+    QString getAuthor();
     void setAutor(QString paName);
 
-    void getId();
-    void setId(unsigned int paId);
+    int getId();
+    void setId(int paId);
 
-    void getBorrowedStatus();
-    void setBorrowedStatus(bool paStatus);
+    int getBorrowedStatus();
+    void setBorrowedStatus(int paStatus);
 
     void setmeItemFound(bool paStatus);
     void getmeItemFound();
 
     void findItem(QString paTitle);
-    void addItem(QString paTitle, QString paName);
+    void addItem(QString paNewItem);
     void updateItem();
+
+    QString getResultString();
+    void setResultString(QString paResult);
 
     virtual void displayInfo() = 0;
 };

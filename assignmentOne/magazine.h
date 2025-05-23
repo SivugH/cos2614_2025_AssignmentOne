@@ -11,7 +11,7 @@ private:
 public:
     clMagazine();
 
-    void getMagazineIssueNumber();
+    int getIssuedNumber();
     void setMagazineIssueNumber(int paNumber);
 
     void displayInfo();

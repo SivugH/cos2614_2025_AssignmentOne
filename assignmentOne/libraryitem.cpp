@@ -14,9 +14,9 @@ clLibraryItem::clLibraryItem()
     //update meID to have the total string count in library
 }
 
-void clLibraryItem::getTitle()
+QString clLibraryItem::getTitle()
 {
-
+    return meTitle;
 }
 
 void clLibraryItem::setTitle(QString paTitle)
@@ -24,9 +24,9 @@ void clLibraryItem::setTitle(QString paTitle)
     meTitle = paTitle;
 }
 
-void clLibraryItem::getAuthor()
+QString clLibraryItem::getAuthor()
 {
-
+    return meAuthor;
 }
 
 void clLibraryItem::setAutor(QString paName)
@@ -34,22 +34,22 @@ void clLibraryItem::setAutor(QString paName)
     meAuthor = paName;
 }
 
-void clLibraryItem::getId()
+int clLibraryItem::getId()
 {
-
+    return  meId;
 }
 
-void clLibraryItem::setId(unsigned int paId)
+void clLibraryItem::setId(int paId)
 {
     meId = paId;
 }
 
-void clLibraryItem::getBorrowedStatus()
+int clLibraryItem::getBorrowedStatus()
 {
-
+    return meIsBorrowed;
 }
 
-void clLibraryItem::setBorrowedStatus(bool paStatus)
+void clLibraryItem::setBorrowedStatus(int paStatus)
 {
     meIsBorrowed = paStatus;
 }
@@ -92,37 +92,35 @@ void clLibraryItem::findItem(QString paTitle)
 
 }
 
-void clLibraryItem::addItem(QString paTitle, QString paName)
+void clLibraryItem::addItem(QString paNewItem)
 {
-    unsigned int loSelection;
-    cout << " Adding a Book or Magazine" << std::endl;
-    cout << "1 - Book" << endl;
-    cout << "2 - Magazine" << endl;
-    cin >> loSelection;
+    cout << "Test" << endl;
 
-    string loTitle;
-    cout << "Title" << std::endl;
-    cin >> loTitle;
+//    ifstream file("libraryList.txt");
 
-
-
-
-    if (loSelection == 1)
+    ofstream loLibraryFile("libraryList.txt", std::ios::app);
+    if (loLibraryFile.is_open())
     {
-
-    }
-    else if (loSelection == 2)
+        loLibraryFile << paNewItem.toStdString() << std::endl;
+        loLibraryFile.close();
+    } else
     {
-
+        std::cerr << "Error opening the file." << std::endl;
     }
-
-
-
-
 }
 
 void clLibraryItem::updateItem()
 {
 
+}
+
+QString clLibraryItem::getResultString()
+{
+    return meResultString;
+}
+
+void clLibraryItem::setResultString(QString paResult)
+{
+    meResultString = paResult;
 }
 
