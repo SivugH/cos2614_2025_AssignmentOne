@@ -9,9 +9,8 @@ class clLibraryItem
 private:
     QString meTitle;
     QString meAuthor;
-    int meId;
+    int meId; //save the location of the found title
     bool meIsBorrowed;
-    QString meLocation;//save the location of the found title
     bool meItemFound; //save status of the found item
     QString meResultString; //save the found title
 
@@ -31,14 +30,11 @@ public:
     void getBorrowedStatus();
     void setBorrowedStatus(bool paStatus);
 
-    void setmeLocation();
-    void getmeLocation();
-
     void setmeItemFound(bool paStatus);
     void getmeItemFound();
 
     void findItem(QString paTitle);
-    void addItem();
+    void addItem(QString paTitle, QString paName);
     void updateItem();
 
     virtual void displayInfo() = 0;

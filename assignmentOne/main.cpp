@@ -6,155 +6,130 @@
 #include "book.h"
 #include "libraryitem.h"
 
+using namespace std;
 
+void BookDetails(string &paTitle, string &paAuthor, string &paGenre)
+{
+    cout << "*************************************************************" << endl;
+    cout << "Enter Book Details:" << endl << endl;
+    cout << "Title:";
+    cin >> paTitle;
+    cout << endl;
+    cout << "Author:" << endl;
+    cin >> paAuthor;
+    cout << endl;
+    cout << "Genre:" << endl;
+    cin >> paGenre;
+    cout << endl;
+}
+
+void MagazineDetails(string &paTitle, string &paAuthor, int &paIssuedNumber)
+{
+    cout << "*************************************************************" << endl;
+    cout << "Enter Magazine Details:" << endl << endl;
+    cout << "Title:";
+    cin >> paTitle;
+    cout << endl;
+    cout << "Author:" << endl;
+    cin >> paAuthor;
+    cout << endl;
+    cout << "Issue Number:" << endl;
+    cin >> paIssuedNumber;
+    cout << endl;
+}
+
+void ItemSelection()
+{
+    string loTitle, loAuthor, loGenre;
+    int loIssuedNumber, loUserChoice;
+    cout << "*************************************************************" << endl;
+
+    cout << "Enter the following:" << endl;
+
+    cout << "1 - Book" << endl;
+    cout << "2 - Magazine" << endl;
+    cout << "Option: ";
+
+    cin >> loUserChoice;
+
+    if (loUserChoice == 1) //Book
+    {
+        clBook loBook;
+        BookDetails(loTitle, loAuthor, loGenre);
+
+
+        loBook.setTitle(QString::fromStdString(loTitle));
+        loBook.setAutor(QString::fromStdString(loAuthor));
+        loBook.setGenre(QString::fromStdString(loGenre));
+
+
+
+    }
+    else if (loUserChoice == 2)//Magazine
+    {
+        clMagazine loMagazine;
+        MagazineDetails(loTitle, loAuthor, loIssuedNumber);
+
+
+        loMagazine.setTitle(QString::fromStdString(loTitle));
+        loMagazine.setAutor(QString::fromStdString(loAuthor));
+        loMagazine.setMagazineIssueNumber(loIssuedNumber);
+    }
+    else
+    {
+        cout << "Apologies we are unable to help you !" << endl;
+
+    }
+}
 
 int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
 
-    QString loBookTitle_qstring;
+    int loUserChoice;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    std::cout << "Welcome to Sivu's Library" << std::endl << std::endl;
-
-    std::cout << "Enter the following:" << std::endl << std::endl;
-
-    std::cout << "1 - Book" << std::endl;
-
-    std::cout << "2 - Magazine" << std::endl;
-
-    unsigned int loUserChoice;
-
-    std::cout << "Option: ";
-
-    std::cin >> loUserChoice;
-
-    if (loUserChoice == 1)
-    {
-        std::cout << "1 - Book" << std::endl;
-        clBook loBook;
-
-        std::string loBookTitle;
-        std::cout << "Enter Book Title:" << std::endl;
-        std::cin >>loBookTitle;
-        loBookTitle_qstring = QString::fromStdString(loBookTitle);
-
-        loBook.setTitle(loBookTitle_qstring);
-
-
-        std::string loBookAuthor;
-        QString loBookAuthor_qstring;
-        std::cout << "Enter Book Author:" << std::endl;
-        std::cin >> loBookAuthor;
-        loBookAuthor_qstring = QString::fromStdString(loBookAuthor);
-
-        loBook.setAutor(loBookAuthor_qstring);
-
-
-
-
-    }
-    else if (loUserChoice == 2)
-    {
-        std::cout << "2 - Magazine" << std::endl;
-        clMagazine loMagazine;
-
-        std::string loMagazineTitle;
-        QString loMagazineTitle_qstring;
-        std::cout << "Enter Magazine Title:" << std::endl;
-        std::cin >>loMagazineTitle;
-        loMagazineTitle_qstring = QString::fromStdString(loMagazineTitle);
-
-        loMagazine.setTitle(loMagazineTitle_qstring);
-
-
-        std::string loMagazineAuthor;
-        QString loMagazineAuthor_qstring;
-        std::cout << "Enter Magazine Author:" << std::endl;
-        std::cin >> loMagazineAuthor;
-        loMagazineAuthor_qstring = QString::fromStdString(loMagazineAuthor);
-
-        loMagazine.setAutor(loMagazineAuthor_qstring);
-
-
-
-
-
-
-
-
-    }
-    else
-    {
-        std::cout << "Incorrect Selection" << std::endl;
-
-
-
-
-
-
-    }
-
-
+    cout << "*************************************************************" << endl;
+    cout << "Welcome to Sivu's Library" << endl << endl;
 
     int loFunctionSelection;
-    std::cout << "Select the following for Book/Magazine:" << std::endl << std::endl;
-    std::cout << "1 - Search" << std::endl;
-    std::cout << "2 - Return" << std::endl;
-    std::cout << "3 - Borrow" << std::endl;
-    std::cout << "4 - Add" << std::endl << std::endl;
+    cout << "Select the following: " << endl << endl;
+    cout << "1 - Search" << endl;
+    cout << "2 - Return an Item" << endl;
+    cout << "3 - Borrow an Item" << endl;
+    cout << "4 - Add an Item" << endl << endl;
 
-    std::cin >> loFunctionSelection;
+    cin >> loFunctionSelection;
 
     switch (loFunctionSelection)
     {
-        case 1: //Search
-        {
- //           loAdmin.findItem(loBookTitle_qstring);
-        }
-        case 2://Return
-        {
-//            loAdmin.updateItem();
-        }
-        case 3: //Borrow
-        {
-            //check for availability before borrowing
- //           loAdmin.updateItem();
-        }
-        case 4: //Add
-        {
-            //Check item does not exist before duplicating
-            //Add item
-        }
+    case 1: //Search
+    {
+        ItemSelection();
+
+    }
+    case 2://Return
+    {
+        ItemSelection();
+    }
+    case 3: //Borrow
+    {
+        ItemSelection();
+
+        //check for availability before borrowing
+        //           loAdmin.updateItem();
+    }
+    case 4: //Add
+    {
+        ItemSelection();
+
+        //Check item does not exist before duplicating
+        //Add item
+    }
     default: //neither of above
     {
+        cout << "Your have entered an incorrect input" << endl;
     }
-        std::cout << "Your have entered an incorrect input" << std::endl;
+
+        return a.exec();
     }
-
-
-
-
-
-
-
-
-    //clLibraryItem loLibraryItem;
-
-    return a.exec();
 }

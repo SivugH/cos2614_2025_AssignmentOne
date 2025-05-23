@@ -13,9 +13,9 @@ void clMagazine::getMagazineIssueNumber()
 
 }
 
-void clMagazine::setMagazineIssueNumber()
+void clMagazine::setMagazineIssueNumber(int paNumber)
 {
-
+    meIssueNumber = paNumber;
 }
 
 void clMagazine::displayInfo()

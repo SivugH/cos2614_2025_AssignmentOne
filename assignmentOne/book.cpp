@@ -14,9 +14,9 @@ void clBook::getGenre()
 
 }
 
-void clBook::setGenre()
+void clBook::setGenre(QString paGenre)
 {
-
+    meGenre = paGenre;
 }
 
 void clBook::displayInfo()

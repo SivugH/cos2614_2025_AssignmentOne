@@ -12,7 +12,7 @@ public:
     clBook();
 
     void getGenre();
-    void setGenre();
+    void setGenre(QString paGenre);
 
     void displayInfo();
 

@@ -9,6 +9,9 @@ using namespace std;
 clLibraryItem::clLibraryItem()
 {
     std::cout << "LibraryItem instance created" << std::endl;
+
+    //todo
+    //update meID to have the total string count in library
 }
 
 void clLibraryItem::getTitle()
@@ -89,8 +92,32 @@ void clLibraryItem::findItem(QString paTitle)
 
 }
 
-void clLibraryItem::addItem()
+void clLibraryItem::addItem(QString paTitle, QString paName)
 {
+    unsigned int loSelection;
+    cout << " Adding a Book or Magazine" << std::endl;
+    cout << "1 - Book" << endl;
+    cout << "2 - Magazine" << endl;
+    cin >> loSelection;
+
+    string loTitle;
+    cout << "Title" << std::endl;
+    cin >> loTitle;
+
+
+
+
+    if (loSelection == 1)
+    {
+
+    }
+    else if (loSelection == 2)
+    {
+
+    }
+
+
+
 
 }
 

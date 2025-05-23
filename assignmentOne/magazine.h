@@ -12,7 +12,7 @@ public:
     clMagazine();
 
     void getMagazineIssueNumber();
-    void setMagazineIssueNumber();
+    void setMagazineIssueNumber(int paNumber);
 
     void displayInfo();
 
